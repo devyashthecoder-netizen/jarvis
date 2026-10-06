@@ -8,18 +8,20 @@ class Node:
 head = Node(10)
 head.next = Node(20)
 head.next.next = Node(30)
-head.next.next.next = Node(50)
 
 
-# Insert node at beginning
-newNode = Node(5)
-newNode.next = head
-head = newNode
+# Insert node at end
+newNode = Node(40)
+
+temp = head
+while temp.next:
+    temp = temp.next
+
+temp.next = newNode
 
 
 # Print linked list
 temp = head
-
 while temp:
     print(temp.data, end=" -> ")
     temp = temp.next
